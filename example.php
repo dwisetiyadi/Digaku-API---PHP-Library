@@ -9,8 +9,8 @@ session_start();
 include('digaku.php');
 
 //memasukan konfigurasi aplikasi (required)
-$config['client_id'] = '4d106ed7fccf2272e1000000';
-$config['client_secret'] = 'ebd021b8d3c58dab9fa47d0629144cf93f1de095';
+$config['client_id'] = '';
+$config['client_secret'] = '';
 
 /*
  * Assign class object beserta konfigurasi ke variabel $digaku
