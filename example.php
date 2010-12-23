@@ -8,19 +8,18 @@ session_start();
 //memanggil class digaku.php
 include('digaku.php');
 
-//memasukan konfigurasi aplikasi
+//memasukan konfigurasi aplikasi, untuk mendapatkannya daftarkan aplikasi anda di http://auth.digaku.com/ui/client/create
 $config['client_id'] = ''; //required
 $config['client_secret'] = ''; //required
 $config['language'] = ''; //opsional, defaultnya id_ID
-
-//url aplikasi untuk callback misalnya http://dwi.web.id/digaku/example.php
-$url_callback = '';
-
 /*
  * Assign class object beserta konfigurasi ke variabel $digaku
  * Jika ingin digunakan pada Codeigniter gunakan $this->load->library('digaku', $config);
  */
 $digaku = new digaku($config);
+
+//url aplikasi untuk callback misalnya http://dwi.web.id/digaku/example.php
+$url_callback = '';
 
 /*
  * Memeriksa apakah nilai code telah dikembalikan (melalui variabel global GET) setelah autorisasi, 
