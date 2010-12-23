@@ -13,6 +13,9 @@ $config['client_id'] = ''; //required
 $config['client_secret'] = ''; //required
 $config['language'] = ''; //opsional, defaultnya id_ID
 
+//url aplikasi untuk callback misalnya http://dwi.web.id/digaku/example.php
+$url_callback = '';
+
 /*
  * Assign class object beserta konfigurasi ke variabel $digaku
  * Jika ingin digunakan pada Codeigniter gunakan $this->load->library('digaku', $config);
@@ -48,7 +51,7 @@ if (isset($_GET['keluar'])) {
 //Memeriksa apakah sedang login. Jika login, tampilkan link logout dan API data, jika tidak, tampilkan link login
 if ($digaku->checklogin()) {
 	//link logout
-	echo '<a href="http://dwi.web.id/digaku/index.php?keluar=out">Logout</a><br />';
+	echo '<a href="'.$url_callback.'?keluar=out">Logout</a><br />';
 	
 	//access token value
 	echo 'Access token: '.$digaku->accesstoken()->token.'<br />';
@@ -68,6 +71,6 @@ if ($digaku->checklogin()) {
 	print_r($digaku->user('streams'));
 	echo '</pre>';
 } else {
-	echo '<a href="'.$digaku->authorize('http://dwi.web.id/digaku/index.php').'">Login</a>';
+	echo '<a href="'.$digaku->authorize($url_callback).'">Login</a>';
 }
 ?>
