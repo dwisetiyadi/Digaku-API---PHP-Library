@@ -1,10 +1,11 @@
 Live example http://dwi.web.id/digaku
 
 How to (sorry my english is very bad):
+--------------------------------------
 
-1. Create application on http://auth.digaku.com/ui/client/create and get your client id and client secret
-2. Download digaku.php from this page and put on your app folder, if you use Codeigniter, put on [YOUR_APP]/application/libraries/
-3. Create your application code like this:
+* Create application on http://auth.digaku.com/ui/client/create and get your client id and client secret
+* Download digaku.php from this page and put on your app folder, if you use Codeigniter, put on [YOUR_APP]/application/libraries/
+* Create your application code like this:
 
 $config['client_id'] = ''; //required
 $config['client_secret'] = ''; //required
