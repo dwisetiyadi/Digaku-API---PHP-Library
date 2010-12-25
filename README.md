@@ -8,11 +8,6 @@ Live example http://dwi.web.id/digaku
 * Download digaku.php from this page and put on your app folder, if you use Codeigniter, put on [YOUR_APP]/application/libraries/
 * Create your application code like this:
 
-    $config['client_id'] = '';
-    $config['client_secret'] = '';
-    $config['language'] = '';
-    $digaku = new digaku($config);
-
 ### SINGLE SIGN ON (you may need to read this http://oauth.net/)
 After authorize proccess, Digaku.com API will be redirect to your callback url given and add a CODE variable on url (variable GET). And then assign the CODE variable to setcode() function object, example: $digaku->setcode($_GET['code']). The CODE variable is required to get access token, so may be you will need to save it on session, cookie, or database. Without the CODE variable, you can't request access token, and without access token you can't access API data. For complete guide, please see live example http://dwi.web.id/digaku and see example.php on this package.
 
@@ -22,3 +17,8 @@ After authorize proccess, Digaku.com API will be redirect to your callback url g
 
 ### UPCOMING
 All of Digaku.com API
+
+    $config['client_id'] = '';
+    $config['client_secret'] = '';
+    $config['language'] = '';
+    $digaku = new digaku($config);
