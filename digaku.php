@@ -111,8 +111,14 @@ class digaku {
 	 * @access public
 	 * @return boolean
 	 */
-	function logout() {
-		$clear_request = simplexml_load_string($this->getcontent('http://auth.digaku.com/clear_token?access_token='.$this->accesstoken()->token));
+	function logout($access_token_saved = '') {
+		if ($access_token_saved == '') {
+			$get_token = $this->accesstoken()->token;
+		} else {
+			$get_token = $access_token_saved;
+		}
+		
+		$clear_request = simplexml_load_string($this->getcontent('http://auth.digaku.com/clear_token?access_token='.$get_token));
 		if ($clear_request === FALSE) {
 			return FALSE;
 		} else {
