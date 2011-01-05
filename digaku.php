@@ -163,7 +163,7 @@ class digaku {
 				echo '<h1>Error Access Token!</h1>';
 			}
 		}
-		//ganti error return
+		
 		echo '<h1>Unavailable API data for user '.$params.'</h1>';
 	}
 	
