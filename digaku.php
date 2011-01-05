@@ -114,7 +114,7 @@ class digaku {
 	 */
 	function logout() {
 		$clear_request = simplexml_load_string($this->getcontent('http://auth.digaku.com/clear_token?access_token='.$this->accesstoken()->token));
-		if ($access_token_check === FALSE) {
+		if ($clear_request === FALSE) {
 			return FALSE;
 		} else {
 			return TRUE;
