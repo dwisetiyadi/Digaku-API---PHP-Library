@@ -6,8 +6,8 @@
  * @author		Dwi Setiyadi / @dwisetiyadi
  * @license		http://www.gnu.org/licenses/gpl.html
  * @link		http://dwi.web.id
- * @version		1.0
- * Last changed	Dec 23th, 2010
+ * @version		1.1
+ * Last changed	5 Jan, 2011
  *
  */
 
