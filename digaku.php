@@ -131,15 +131,22 @@ class digaku {
 	 * [CLASS OBJECT]->user('streams') for user streams
 	 *
 	 * @access public
-	 * @parameters info streams
+	 * @parameter 1 info streams
+	 * @parameter 2 saved access token
 	 * @return object
 	 */
-	function user($params = '') {
+	function user($params = '', $access_token_saved = '') {
+		if ($access_token_saved == '') {
+			$get_token = $this->accesstoken()->token;
+		} else {
+			$get_token = $access_token_saved;
+		}
+		
 		if ($params == 'info') {
-			return json_decode($this->getcontent('http://api.digaku.com/my/info?access_token='.$this->accesstoken()->token.'&rf=json&itl='.$this->lang));
+			return json_decode($this->getcontent('http://api.digaku.com/my/info?access_token='.$get_token.'&rf=json&itl='.$this->lang));
 		}
 		if ($params == 'streams') {
-			return json_decode($this->getcontent('http://api.digaku.com/my/streams?access_token='.$this->accesstoken()->token.'&rf=json&itl='.$this->lang));
+			return json_decode($this->getcontent('http://api.digaku.com/my/streams?access_token='.$get_token.'&rf=json&itl='.$this->lang));
 		}
 		return $empty = '';
 	}
