@@ -148,12 +148,22 @@ class digaku {
 		}
 		
 		if ($params == 'info') {
-			return json_decode($this->getcontent('http://api.digaku.com/my/info?access_token='.$get_token.'&rf=json&itl='.$this->lang));
+			$api_data = simplexml_load_string($this->getcontent('http://api.digaku.com/my/info?access_token='.$get_token.'&rf=json&itl='.$this->lang));
+			if ($api_data === FALSE) {
+				return json_decode($this->getcontent('http://api.digaku.com/my/info?access_token='.$get_token.'&rf=json&itl='.$this->lang));
+			} else {
+				echo '<h1>Error Access Token!</h1>';
+			}
 		}
 		if ($params == 'streams') {
-			return json_decode($this->getcontent('http://api.digaku.com/my/streams?access_token='.$get_token.'&rf=json&itl='.$this->lang));
+			$api_data = simplexml_load_string($this->getcontent('http://api.digaku.com/my/info?access_token='.$get_token.'&rf=json&itl='.$this->lang));
+			if ($api_data === FALSE) {
+				return json_decode($this->getcontent('http://api.digaku.com/my/streams?access_token='.$get_token.'&rf=json&itl='.$this->lang));
+			} else {
+				echo '<h1>Error Access Token!</h1>';
+			}
 		}
-		return $empty = '';
+		echo '<h1>Unavailable API data for user '.$params.'</h1>';
 	}
 	
 	// --------------------------------------------------------------------
